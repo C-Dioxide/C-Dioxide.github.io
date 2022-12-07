@@ -1,0 +1,397 @@
+
+/*header--all*/
+
+.header {
+  width: 100%;
+  background: #9e9e9e6c;
+}
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-right: 50px;
+  padding-left: 50px;
+  max-width: 1280px;
+  height: 80px;
+}
+.header__logo {
+  width: 220px;
+}
+.header__logo img {
+  width: 60%;
+}
+.header__nav {
+  display: flex;
+}
+.header__nav-item {
+  margin-left: 35px;
+}
+.header__nav-item a {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+
+
+
+/*main*/
+
+.about {
+  margin: 0 auto;
+  padding-top: 78px;
+  max-width: 1280px;
+}
+.about__title {
+  padding-left: 50px;
+  padding-bottom: 36px;
+}
+.about__body {
+}
+.about__body-item {
+  display: flex;
+  align-items: center;
+}
+.about__body-item-img {
+  width: 46%;
+}
+.about__body-item-img img {
+  width: 100%;
+}
+.about__body-item-texts {
+  box-sizing: border-box;
+  padding-right: 7.8%;
+  padding-left: 7.8%;
+  width: 54%;
+}
+.about__body-item-texts-copy {
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #006a80;
+}
+.about__body-item-texts-p {
+  padding-top: 25px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+}
+.about__body-more {
+  padding-top: 60px;
+}
+.about__body-more a {
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+@media all and (max-width: 767px)
+ /*SmartPhone*/
+  /*header*/
+  {
+  .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .header__wrap {
+    padding-right: 23px;
+    padding-left: 10px;
+    height: 50px;
+  }
+  .header__logo {
+    width: 135px;
+  }
+  .header__nav {
+    display: none;
+  }
+
+  /*Humburger-Menu*/
+
+  /*botan*/
+
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    height: 30px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #9c9c9c00;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #000000;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;/*メニューを画面内へ*/
+}
+
+/*menu*/
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 80;
+    background-color: #727272de;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 2px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 17px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+/*main*/
+
+.about {
+  padding-top: 58px;
+}
+.about__title {
+  padding-left: 0;
+  padding-bottom: 24px;
+  text-align: center;
+  color: #006a80;
+  font-size: 30px;
+  padding: 2rem 2rem;
+  background: #e6f3ff;
+}
+
+.about__body-item {
+  flex-direction: column;
+}
+.about__body-item--reverse {
+  flex-direction: column-reverse;
+}
+.about__body-item-img {
+  width: 100%;
+}
+.about__body-item-texts {
+  padding-top: 25px;
+  padding-right: 10px;
+  padding-bottom: 48px;
+  padding-left: 10px;
+  width: 100%;
+}
+.about__body-item-texts-copy {
+  font-size: 16px;
+}
+.about__body-item-texts-p {
+  padding-top: 10px;
+  font-size: 10px;
+}
+.about__body-more {
+  padding-top: 0;
+}
+
+
+.about__body-more1 {
+  padding-top: 0px;
+  position: absolute;
+  left: 0px;
+  top: 290px;
+}
+.about__body-more1 a {
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+}
+
+
+@media all and (min-width: 768px){
+  /*header--PC*/
+
+.header {
+  width: 100%;
+  background: #9e9e9e6c;
+}
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-right: 50px;
+  padding-left: 50px;
+  max-width: 1280px;
+  height: 80px;
+}
+.header__logo {
+  width: 220px;
+}
+.header__logo img {
+  width: 60%;
+}
+.header__nav {
+  display: flex;
+}
+.header__nav-item {
+  margin-left: 35px;
+}
+.header__nav-item a {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.hamburger-menu{
+  display: none;
+}
+
+
+
+/*main*/
+
+.about {
+  margin: 0 auto;
+  padding-top: 78px;
+  max-width: 1280px;
+}
+.about__title {
+  padding-left: 50px;
+  padding-bottom: 36px;
+}
+.about__body {
+}
+.about__body-item {
+  display: flex;
+  align-items: center;
+}
+.about__body-item-img {
+  width: 46%;
+}
+.about__body-item-img img {
+  width: 100%;
+}
+.about__body-item-texts {
+  box-sizing: border-box;
+  padding-right: 7.8%;
+  padding-left: 7.8%;
+  width: 54%;
+}
+.about__body-item-texts-copy {
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  font-weight: bold;
+  color: #006a80;
+}
+.about__body-item-texts-p {
+  padding-top: 25px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+}
+.about__body-more {
+  padding-top: 60px;
+}
+.about__body-more a {
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+}
+
+.about__body-more1 {
+  display: none;
+}
+
+}
